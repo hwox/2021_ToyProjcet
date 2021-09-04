@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: c388c1f48560da24e82d49a0e716f771
+timeCreated: 1470924187
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Chest
+    100004: Head
+    100006: Hips
+    100008: Leg
+    100010: LFoot
+    100012: LHand
+    100014: LIndex1
+    100016: LIndex2
+    100018: LIndex3
+    100020: LLowerArm
+    100022: LLowerLeg
+    100024: LMiddle1
+    100026: LMiddle2
+    100028: LMiddle3
+    100030: LRing1
+    100032: LRing2
+    100034: LRing3
+    100036: LSholder
+    100038: LSword
+    100040: LThumb1
+    100042: LThumb2
+    100044: LThumb3
+    100046: LToes
+    100048: LUpperArm
+    100050: LUpperLeg
+    100052: LWeapon1
+    100054: LWeapon2
+    100056: Neck
+    100058: RFoot
+    100060: RHand
+    100062: RIndex1
+    100064: RIndex2
+    100066: RIndex3
+    100068: RLowerArm
+    100070: RLowerLeg
+    100072: RMiddle1
+    100074: RMiddle2
+    100076: RMiddle3
+    100078: RRing1
+    100080: RRing2
+    100082: RRing3
+    100084: RSholder
+    100086: RSword
+    100088: RThumb1
+    100090: RThumb2
+    100092: RThumb3
+    100094: RToes
+    100096: RUpperArm
+    100098: RUpperLeg
+    100100: RWeapon1
+    100102: RWeapon2
+    100104: Spine
+    100106: Spine1
+    100108: Tors
+    100110: Weapon_L
+    100112: Weapon_R
+    400000: //RootNode
+    400002: Chest
+    400004: Head
+    400006: Hips
+    400008: Leg
+    400010: LFoot
+    400012: LHand
+    400014: LIndex1
+    400016: LIndex2
+    400018: LIndex3
+    400020: LLowerArm
+    400022: LLowerLeg
+    400024: LMiddle1
+    400026: LMiddle2
+    400028: LMiddle3
+    400030: LRing1
+    400032: LRing2
+    400034: LRing3
+    400036: LSholder
+    400038: LSword
+    400040: LThumb1
+    400042: LThumb2
+    400044: LThumb3
+    400046: LToes
+    400048: LUpperArm
+    400050: LUpperLeg
+    400052: LWeapon1
+    400054: LWeapon2
+    400056: Neck
+    400058: RFoot
+    400060: RHand
+    400062: RIndex1
+    400064: RIndex2
+    400066: RIndex3
+    400068: RLowerArm
+    400070: RLowerLeg
+    400072: RMiddle1
+    400074: RMiddle2
+    400076: RMiddle3
+    400078: RRing1
+    400080: RRing2
+    400082: RRing3
+    400084: RSholder
+    400086: RSword
+    400088: RThumb1
+    400090: RThumb2
+    400092: RThumb3
+    400094: RToes
+    400096: RUpperArm
+    400098: RUpperLeg
+    400100: RWeapon1
+    400102: RWeapon2
+    400104: Spine
+    400106: Spine1
+    400108: Tors
+    400110: Weapon_L
+    400112: Weapon_R
+    4300000: Weapon_L
+    4300002: Tors
+    4300004: Leg
+    4300006: Weapon_R
+    7400000: WalkR Type2
+    9500000: //RootNode
+    13700000: Leg
+    13700002: Tors
+    13700004: Weapon_L
+    13700006: Weapon_R
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: WalkR Type2
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hips
+        weight: 1
+      - path: Hips/LUpperLeg
+        weight: 1
+      - path: Hips/LUpperLeg/LLowerLeg
+        weight: 1
+      - path: Hips/LUpperLeg/LLowerLeg/LFoot
+        weight: 1
+      - path: Hips/LUpperLeg/LLowerLeg/LFoot/LToes
+        weight: 1
+      - path: Hips/RUpperLeg
+        weight: 1
+      - path: Hips/RUpperLeg/RLowerLeg
+        weight: 1
+      - path: Hips/RUpperLeg/RLowerLeg/RFoot
+        weight: 1
+      - path: Hips/RUpperLeg/RLowerLeg/RFoot/RToes
+        weight: 1
+      - path: Hips/Spine
+        weight: 1
+      - path: Hips/Spine/Spine1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LIndex1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LIndex1/LIndex2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LIndex1/LIndex2/LIndex3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LMiddle1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LMiddle1/LMiddle2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LMiddle1/LMiddle2/LMiddle3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LRing1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LRing1/LRing2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LRing1/LRing2/LRing3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LSword
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LThumb1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LThumb1/LThumb2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LSholder/LUpperArm/LLowerArm/LHand/LThumb1/LThumb2/LThumb3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LWeapon1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/LWeapon1/LWeapon2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/Neck
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/Neck/Head
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RIndex1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RIndex1/RIndex2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RIndex1/RIndex2/RIndex3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RMiddle1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RMiddle1/RMiddle2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RMiddle1/RMiddle2/RMiddle3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RRing1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RRing1/RRing2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RRing1/RRing2/RRing3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RSword
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RThumb1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RThumb1/RThumb2
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RSholder/RUpperArm/RLowerArm/RHand/RThumb1/RThumb2/RThumb3
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RWeapon1
+        weight: 1
+      - path: Hips/Spine/Spine1/Chest/RWeapon1/RWeapon2
+        weight: 1
+      - path: Leg
+        weight: 1
+      - path: Tors
+        weight: 1
+      - path: Weapon_L
+        weight: 1
+      - path: Weapon_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

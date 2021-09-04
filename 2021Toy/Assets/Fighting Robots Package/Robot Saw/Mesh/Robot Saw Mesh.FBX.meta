@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: ec595efd5dd3cc74eb6e018263f77834
+timeCreated: 1517221792
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Bracing_L
+    100006: Bracing_R
+    100008: Chest
+    100010: Head
+    100012: Hips
+    100014: LFoot
+    100016: LGun
+    100018: LGun1
+    100020: LHand
+    100022: LLowerArm
+    100024: LLowerLeg
+    100026: LSaw
+    100028: LSholder
+    100030: LToes
+    100032: LUpperArm
+    100034: LUpperLeg
+    100036: LWeapon
+    100038: LWeapon1
+    100040: LWeapon2
+    100042: Missile  launcher_L
+    100044: Missile  launcher_R
+    100046: Neck
+    100048: Plasma Weapon_L
+    100050: Plasma Weapon_R
+    100052: RFoot
+    100054: RGun
+    100056: RGun1
+    100058: RHand
+    100060: RLowerArm
+    100062: RLowerLeg
+    100064: //RootNode
+    100066: RSaw
+    100068: RSholder
+    100070: RToes
+    100072: RUpperArm
+    100074: RUpperLeg
+    100076: RWeapon
+    100078: RWeapon1
+    100080: RWeapon2
+    100082: Spine
+    100084: Spine1
+    100086: Tors
+    100088: Volcano Weapon_L
+    100090: Volcano Weapon_R
+    400000: Arm_L
+    400002: Arm_R
+    400004: Bracing_L
+    400006: Bracing_R
+    400008: Chest
+    400010: Head
+    400012: Hips
+    400014: LFoot
+    400016: LGun
+    400018: LGun1
+    400020: LHand
+    400022: LLowerArm
+    400024: LLowerLeg
+    400026: LSaw
+    400028: LSholder
+    400030: LToes
+    400032: LUpperArm
+    400034: LUpperLeg
+    400036: LWeapon
+    400038: LWeapon1
+    400040: LWeapon2
+    400042: Missile  launcher_L
+    400044: Missile  launcher_R
+    400046: Neck
+    400048: Plasma Weapon_L
+    400050: Plasma Weapon_R
+    400052: RFoot
+    400054: RGun
+    400056: RGun1
+    400058: RHand
+    400060: RLowerArm
+    400062: RLowerLeg
+    400064: //RootNode
+    400066: RSaw
+    400068: RSholder
+    400070: RToes
+    400072: RUpperArm
+    400074: RUpperLeg
+    400076: RWeapon
+    400078: RWeapon1
+    400080: RWeapon2
+    400082: Spine
+    400084: Spine1
+    400086: Tors
+    400088: Volcano Weapon_L
+    400090: Volcano Weapon_R
+    4300000: Tors
+    4300002: Arm_L
+    4300004: Volcano Weapon_R
+    4300006: Arm_R
+    4300008: Bracing_L
+    4300010: Bracing_R
+    4300012: Missile  launcher_L
+    4300014: Missile  launcher_R
+    4300016: Plasma Weapon_L
+    4300018: Plasma Weapon_R
+    4300020: Volcano Weapon_L
+    9500000: //RootNode
+    13700000: Arm_L
+    13700002: Arm_R
+    13700004: Bracing_L
+    13700006: Bracing_R
+    13700008: Missile  launcher_L
+    13700010: Missile  launcher_R
+    13700012: Plasma Weapon_L
+    13700014: Plasma Weapon_R
+    13700016: Tors
+    13700018: Volcano Weapon_L
+    13700020: Volcano Weapon_R
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
