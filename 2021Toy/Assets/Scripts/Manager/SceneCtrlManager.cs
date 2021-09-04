@@ -4,14 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneCtrlManager : MonoBehaviour
+public class SceneCtrlManager : Singleton<SceneCtrlManager>
 {
-    public enum sceneType
-    {
-        Start = 1,
-        Play = 2
-    }
-
     // Scene 이름
     public const string START_SCENE = "Start";
     public const string PLAY_SCENE = "Play";
@@ -21,9 +15,16 @@ public class SceneCtrlManager : MonoBehaviour
     AsyncOperation async_operation;
     bool IsDone = false;
 
+    public string nowScene;
+
     void Start()
     {
         Debug.Log("Scene Manager Start");
+    }
+
+    public void init()
+    {
+        slider = GameObject.Find("Slider").GetComponent<Slider>();
         initNowSceneCheck();
     }
 
@@ -35,9 +36,9 @@ public class SceneCtrlManager : MonoBehaviour
     void initNowSceneCheck()
     {
         // 현재 씬 이름 받아오기
-        string nowSceneName = SceneManager.GetActiveScene().name;
+        nowScene = SceneManager.GetActiveScene().name;
 
-        switch (nowSceneName)
+        switch (nowScene)
         {
             case START_SCENE:
                 startScene();
@@ -81,8 +82,13 @@ public class SceneCtrlManager : MonoBehaviour
             }
 
             Debug.Log("loading End");
+            nowScene = PLAY_SCENE;
             SceneManager.LoadScene(PLAY_SCENE);
         }
     }
 
+    public string getNowSceneName()
+    {
+        return nowScene;
+    }
 }

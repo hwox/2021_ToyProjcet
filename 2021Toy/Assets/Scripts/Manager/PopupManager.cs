@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopupManager : MonoBehaviour
+public class PopupManager : Singleton<PopupManager>
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    public void init()
+    {
+
+    }
+    
     void Update()
     {
         
