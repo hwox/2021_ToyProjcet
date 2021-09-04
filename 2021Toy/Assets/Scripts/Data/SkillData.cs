@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillData : MonoBehaviour
+public class SkillData : StaticData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string name;
+    public int type;
+    public int needMp;
+    public string desc;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

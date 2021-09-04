@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameCtrlManager : Singleton<GameCtrlManager>
 {
 
-    private void Awake()
+    public void init()
     {
         // 매니저 생성 
         SceneCtrlManager.Instance.init();
