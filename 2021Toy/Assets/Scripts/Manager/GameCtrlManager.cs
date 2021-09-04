@@ -12,6 +12,7 @@ public class GameCtrlManager : Singleton<GameCtrlManager>
         SoundManager.Instance.init();
         DataManager.Instance.init();
         PopupManager.Instance.init();
+        PlayerManager.Instance.init();
     }
     // Start is called before the first frame update
     void Start()
