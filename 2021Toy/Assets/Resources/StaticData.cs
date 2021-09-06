@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExcelAsset]
-public class MstItems : ScriptableObject
+public class StaticData : ScriptableObject
 {
-	public List<MstItemEntity> Entities; 
+	public List<SkillEntity> Skill; 
+	public List<ScriptData> Script; 
 }
