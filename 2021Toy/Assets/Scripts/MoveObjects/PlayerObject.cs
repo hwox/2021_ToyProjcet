@@ -39,16 +39,19 @@ public class PlayerObject : MoveObject
         if (isMoveEnable)
         {
             Debug.Log("input");
-            transPos = Camera.main.ScreenToWorldPoint(Pos);
-            targetPos = new Vector3(transPos.x, transPos.y, transPos.z);
+            //  transPos = Camera.main.ScreenToWorldPoint(Pos);
+            // targetPos = new Vector3(transPos.x, transPos.y, 0);
+            targetPos = Camera.main.ScreenToWorldPoint(Pos);
+            targetPos.z = transform.position.z;
+
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * moveSpeed);
         }
 
-        float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
-        float rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
+       // float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
+       // float rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
 
-        transform.Rotate(Vector3.up, -rotX);
-        transform.Rotate(Vector3.right, rotY);
+       // transform.Rotate(Vector3.up, -rotX);
+      //  transform.Rotate(Vector3.right, rotY);
     }
 
     override public void die()
