@@ -33,7 +33,7 @@ public class CameraManager : Singleton<CameraManager>
     // Start is called before the first frame update
     void Start()
     {
-        mainCamOffsetType = 1;
+        mainCamOffsetType = 0;
         mainCam = Camera.main;
         mainCamTrans = mainCam.GetComponent<Transform>();
     }
@@ -51,13 +51,14 @@ public class CameraManager : Singleton<CameraManager>
         }
     }
 
-    private void FixedUpdate()
+
+    private void LateUpdate()
     {
-        if(mainCamOffsetType == EGameSetting.SHOULDER_VIEW)
+        if (mainCamOffsetType == EGameSetting.SHOULDER_VIEW)
         {
             targetPos = playerTransform.transform.TransformPoint(cam1Offset);
         }
-        else if(mainCamOffsetType == EGameSetting.FPS_VIEW)
+        else if (mainCamOffsetType == EGameSetting.FPS_VIEW)
         {
             targetPos = playerTransform.transform.TransformPoint(cam2Offset);
         }
@@ -65,6 +66,7 @@ public class CameraManager : Singleton<CameraManager>
         mainCamTrans.position = Vector3.Lerp(mainCamTrans.position, targetPos, Time.fixedDeltaTime * posSmooth);
         mainCamTrans.LookAt(playerTransform.position + attOffset * playerTransform.transform.forward);
     }
+
 
     // UI 버튼 클릭 및 키 입력을 통한 카메라 offset change 
     public void camChange(int type)
