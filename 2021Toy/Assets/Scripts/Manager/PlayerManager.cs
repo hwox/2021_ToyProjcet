@@ -37,9 +37,9 @@ public class PlayerManager : Singleton<PlayerManager>
         playerObj = player.GetComponent<PlayerObject>();
     }
 
-    public void playerMoveInput(Vector3 pos)
+    public void playerMoveInput(Vector3 transPos)
     {
         onStartPlay();
-        playerObj.playerMove(pos);
+        playerObj.playerMove(transPos);
     }
 }

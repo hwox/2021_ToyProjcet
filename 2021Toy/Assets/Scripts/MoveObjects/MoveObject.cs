@@ -25,7 +25,7 @@ public class MoveObject : MonoBehaviour
     {
         get
         {
-            if(isNowUseSkill)
+            if (isNowUseSkill)
             {
                 return false;
             }

@@ -8,19 +8,31 @@ public class PlayerObject : MoveObject
     Transform trans;
 
     Vector3 transPos, transRot;
-    Vector3 targetPos, targetRot;
+    
+    [SerializeField]
+    GameObject nowPlayRobot;
+    public List<GameObject> robots;
+    int playType;
 
+    protected bool isMove;
+  
     // Start is called before the first frame update
     void Start()
     {
         trans = GetComponent<Transform>();
-
+        playType = 0;
+        isNowUseSkill = false;
+        nowPlayRobot = robots[playType];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(isMove)
+        {
+            move();
+            Debug.Log("keep going");
+        }
     }
 
     public void useSkill(SkillData skill)
@@ -34,28 +46,46 @@ public class PlayerObject : MoveObject
     }
 
     // 플레이어 움직이는 함수
-    public void playerMove(Vector3 Pos)
+    public void playerMove(Vector3 pos)
     {
         if (isMoveEnable)
         {
-            Debug.Log("input");
-            //  transPos = Camera.main.ScreenToWorldPoint(Pos);
-            // targetPos = new Vector3(transPos.x, transPos.y, 0);
-            targetPos = Camera.main.ScreenToWorldPoint(Pos);
-            targetPos.z = transform.position.z;
-
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * moveSpeed);
+            transPos = pos;
+            isMove = true;
         }
+    }
 
-       // float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
-       // float rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
+    private void move()
+    {
+        var dir = transPos - transform.position;
+        nowPlayRobot.GetComponent<Transform>().forward = dir;
+        transform.position += dir.normalized * Time.deltaTime * 2.0f;
 
-       // transform.Rotate(Vector3.up, -rotX);
-      //  transform.Rotate(Vector3.right, rotY);
+        if (Vector3.Distance(transform.position, transPos) <= 0.1f || !isMoveEnable)
+        {
+            isMove = false;
+        }
     }
 
     override public void die()
     {
 
     }
+
+    public void playRobotTypeChange(int type)
+    {
+        playType = type;
+        nowPlayRobot = robots[type];
+
+        for(int i=0;i<robots.Count; ++i)
+        {
+            if (playType == i)
+                robots[i].SetActive(true);
+            else
+            {
+                robots[i].SetActive(false);
+            }
+        }
+    }
+
 }

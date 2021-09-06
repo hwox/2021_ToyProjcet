@@ -21,11 +21,14 @@ public class CameraManager : Singleton<CameraManager>
 
     readonly Vector3 cam1Offset = new Vector3(0f, 6f, -6f);
     readonly Vector3 cam2Offset = new Vector3(0f, 4f, -1.5f);
+    readonly Vector3 cam3Offset = new Vector3(0f, 1.5f, -1.5f);
 
     Vector3 targetPos;
 
-    const float posSmooth = 6f;
+    const float posSmooth = 10f;
     const float attOffset = 3f;
+
+    bool camRotate; // 오른쪽 마우스 클릭으로 캠 회전 todo 
 
     // Start is called before the first frame update
     void Start()
@@ -61,8 +64,6 @@ public class CameraManager : Singleton<CameraManager>
 
         mainCamTrans.position = Vector3.Lerp(mainCamTrans.position, targetPos, Time.fixedDeltaTime * posSmooth);
         mainCamTrans.LookAt(playerTransform.position + attOffset * playerTransform.transform.forward);
-
-        Debug.Log("dddd");
     }
 
     // UI 버튼 클릭 및 키 입력을 통한 카메라 offset change 

@@ -7,6 +7,9 @@ public class InputManager : Singleton<InputManager>
 {
     Vector3 mousePos, targetPos, transPos;
     Dictionary<KeyCode, Action> keyDic;
+    Vector3 rotPos;
+
+    Camera mainCam;
 
     void Start()
     {
@@ -20,15 +23,24 @@ public class InputManager : Singleton<InputManager>
 
     public void init()
     {
-
+        mainCam = Camera.main;
+        if(mainCam == null)
+        {
+            Debug.Log("mainCam is null");
+        }
     }
+
 
     // 플레이어 이동은 마우스로 할 거임 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            PlayerManager.Instance.playerMoveInput(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                PlayerManager.Instance.playerMoveInput(hit.point);
+            }
         }
 
         if (Input.anyKeyDown)
