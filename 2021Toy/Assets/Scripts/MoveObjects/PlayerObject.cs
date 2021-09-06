@@ -28,7 +28,12 @@ public class PlayerObject : MoveObject
     // Update is called once per frame
     void Update()
     {
-        if(isMove)
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (isMove)
         {
             move();
             Debug.Log("keep going");
