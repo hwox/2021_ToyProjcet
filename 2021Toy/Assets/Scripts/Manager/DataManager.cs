@@ -11,13 +11,17 @@ public class DataManager : Singleton<DataManager>
     public enum DataType
     {
         skill,
+        script,
         item,
         enemy,
         last
     }
 
-    List<SkillData> skillData;
-    List<ItemData> itemData;
+    List<Dictionary<string, object>> skillData;
+    List<Dictionary<string, object>> scriptData;
+    List<Dictionary<string, object>> enemyData;
+    List<Dictionary<string, object>> itemData;
+
 
     void Start()
     {
@@ -31,26 +35,34 @@ public class DataManager : Singleton<DataManager>
 
     public void init()
     {
-        dataRead(path);
+        // dataRead(path);
+        dataRead((int)DataType.skill);
+        for(int i=0;i<skillData.Count; ++i)
+        {
+            Debug.Log(skillData[i]["desc"].ToString());
+        }
     }
 
     // excel 파일을 읽어오려 했으나 자꾸 Microsoft office관련 참조가 풀리면서 에러 발생
-    // -> 구글 스프레드 시트로 하려했으나 굳이 구글 스프레드 시트까지 만들어야 할까? 해서 xml로 변경
-    // xml 읽어오는 함수 
-    void dataRead(string path = "")
+    // -> 구글 스프레드 시트로 하려했으나 굳이 구글 스프레드 시트까지 만들어야 할까? 해서 
+    // 그냥 csv를 파싱해오기로 했다. CSVReader는 오픈소스 이용
+    void dataRead(int type, string path = "")
     {
-
-        try
+        if (type == (int)DataType.skill)
         {
-            if(path == "")
-            {
-                throw new System.Exception("path is null");
-            }
-
+            skillData = CSVReader.Read("Skill");
         }
-        catch(Exception e)
+        else if (type == (int)DataType.script)
         {
-            throw e;
+            scriptData = CSVReader.Read("Script");
+        }
+        else if (type == (int)DataType.item)
+        {
+            itemData = CSVReader.Read("Item");
+        }
+        else if (type == (int)DataType.enemy)
+        {
+            enemyData = CSVReader.Read("Enemy");
         }
     }
 

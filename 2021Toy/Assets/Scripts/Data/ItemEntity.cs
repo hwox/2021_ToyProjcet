@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillData : ScriptableObject
+public class ItemEntity : MonoBehaviour
 {
-    public List<SkillEntity> skills;
+   
 }
