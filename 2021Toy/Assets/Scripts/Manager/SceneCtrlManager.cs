@@ -83,6 +83,7 @@ public class SceneCtrlManager : Singleton<SceneCtrlManager>
 
             Debug.Log("loading End");
             nowScene = PLAY_SCENE;
+            ObjectPoolManager.Instance.sceneChange(nowScene);
             SceneManager.LoadScene(PLAY_SCENE);
         }
     }
