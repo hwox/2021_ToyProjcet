@@ -25,14 +25,13 @@ public class PlayerObject : MoveObject
     {
         trans = GetComponent<Transform>();
         nav = GetComponent<NavMeshAgent>();
-        nav.updateRotation = false; // agent가 캐릭터가 회전시키지 않도록 
+       // nav.updateRotation = false; // agent가 캐릭터가 회전시키지 않도록 
 
         playType = 0;
 
         isNowUseSkill = false;
-        nowPlayRobot = robots[playType];
 
-        
+        nowPlayRobot = robots[playType];
     }
 
     // Update is called once per frame
@@ -83,10 +82,6 @@ public class PlayerObject : MoveObject
             isMove = false;
             return;
         }
-
-        var dir = new Vector3(nav.steeringTarget.x, transform.position.y, nav.steeringTarget.z) - transform.position;
-        nowPlayRobot.GetComponent<Transform>().forward = dir;
-        //transform.position += dir.normalized * Time.deltaTime * 2.0f;
     }
 
     override public void die()

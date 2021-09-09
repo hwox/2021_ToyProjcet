@@ -19,9 +19,9 @@ public class CameraManager : Singleton<CameraManager>
     [SerializeField]
     private Transform playerTransform;
 
-    readonly Vector3 cam1Offset = new Vector3(0f, 6f, -6f);
+    readonly Vector3 cam1Offset = new Vector3(0f, 3f, -1f);
     readonly Vector3 cam2Offset = new Vector3(0f, 4f, -1.5f);
-    readonly Vector3 cam3Offset = new Vector3(0f, 1.5f, -1.5f);
+    readonly Vector3 cam3Offset = new Vector3(0f, 6f, -6f);
 
     Vector3 targetPos;
 
@@ -38,12 +38,11 @@ public class CameraManager : Singleton<CameraManager>
         mainCamTrans = mainCam.GetComponent<Transform>();
     }
 
-    public void init()
+    public void init(Transform pTrnas = null)
     {
-        GameObject obj = GameObject.Find("Player");
-        if(obj != null)
+        if(pTrnas != null)
         {
-            playerTransform = obj.GetComponent<Transform>();
+            playerTransform = pTrnas;
         }
         else
         {
@@ -57,14 +56,15 @@ public class CameraManager : Singleton<CameraManager>
         if (mainCamOffsetType == EGameSetting.SHOULDER_VIEW)
         {
             targetPos = playerTransform.transform.TransformPoint(cam1Offset);
+            mainCamTrans.position = Vector3.Lerp(mainCamTrans.position, targetPos, Time.fixedDeltaTime * posSmooth);
+            mainCamTrans.LookAt(playerTransform.position + attOffset * playerTransform.transform.forward);
         }
         else if (mainCamOffsetType == EGameSetting.FPS_VIEW)
         {
             targetPos = playerTransform.transform.TransformPoint(cam2Offset);
+            mainCamTrans.position = Vector3.Lerp(mainCamTrans.position, targetPos, Time.fixedDeltaTime * posSmooth);
+            mainCamTrans.LookAt(playerTransform.position + attOffset * playerTransform.transform.forward);
         }
-
-        mainCamTrans.position = Vector3.Lerp(mainCamTrans.position, targetPos, Time.fixedDeltaTime * posSmooth);
-        mainCamTrans.LookAt(playerTransform.position + attOffset * playerTransform.transform.forward);
     }
 
 

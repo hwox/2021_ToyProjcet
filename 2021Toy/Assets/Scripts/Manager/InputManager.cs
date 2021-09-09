@@ -31,7 +31,7 @@ public class InputManager : Singleton<InputManager>
     }
 
 
-    // 플레이어 이동은 마우스로 할 거임 
+    // 플레이어 이동은 마우스로
     void Update()
     {
         if (Input.GetMouseButton(0))

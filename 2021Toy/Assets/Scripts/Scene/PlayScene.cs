@@ -7,7 +7,8 @@ public class PlayScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerManager.Instance.init();
+        ObjectPoolManager.Instance.sceneChange("Play");
     }
 
     // Update is called once per frame
