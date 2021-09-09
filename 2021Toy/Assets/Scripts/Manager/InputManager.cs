@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InputManager : Singleton<InputManager>
 {
@@ -34,10 +35,12 @@ public class InputManager : Singleton<InputManager>
     // 플레이어 이동은 마우스로
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        int layerMask = 1 << 10;
+
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             RaycastHit hit;
-            if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit))
+            if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layerMask))
             {
                 PlayerManager.Instance.playerMoveInput(hit.point);
             }
