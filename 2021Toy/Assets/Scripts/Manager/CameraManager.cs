@@ -69,7 +69,7 @@ public class CameraManager : Singleton<CameraManager>
 
 
     // UI 버튼 클릭 및 키 입력을 통한 카메라 offset change 
-    public void camChange(int type)
+    public void camChange(int type = 0)
     {
         mainCamOffsetType = type;
     }
