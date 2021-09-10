@@ -16,6 +16,8 @@ public class PlayScene : MonoBehaviour
 
         camOffset1.onClick.AddListener(()=>CameraManager.Instance.camChange(0));
         camOffset2.onClick.AddListener(() => CameraManager.Instance.camChange(1));
+
+        CommonUIManager.Instance.commonUICanvasActie(true);
     }
 
     private void OnDestroy()
