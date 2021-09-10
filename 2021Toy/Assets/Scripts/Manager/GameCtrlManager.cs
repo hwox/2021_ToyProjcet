@@ -12,6 +12,7 @@ public class GameCtrlManager : Singleton<GameCtrlManager>
         SoundManager.Instance.init();
         DataManager.Instance.init();
         PopupManager.Instance.init();
+        CommonUIManager.Instance.init();
 
         ObjectPoolManager.Instance.init();
         InputManager.Instance.init();
