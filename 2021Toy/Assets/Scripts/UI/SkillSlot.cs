@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SkillSlot : MonoBehaviour
@@ -15,10 +16,12 @@ public class SkillSlot : MonoBehaviour
 
     public Sprite[] enableImage;
 
+    Image dragImage;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        dragImage = this.transform.root.Find("DragSlot").GetComponent<Image>();
     }
 
     public void skillSlotSet(SkillData data)
@@ -47,5 +50,34 @@ public class SkillSlot : MonoBehaviour
         {
             skillUseEnable.sprite = enableImage[1];
         }
+    }
+
+    public void OnDragBegin(BaseEventData data)
+    {
+        dragImage.gameObject.SetActive(true);
+        dragImage.GetComponent<RectTransform>().SetAsLastSibling(); 
+
+
+        // 현재 선택된 이미지의 스프라이트와 맞춰주기
+        dragImage.sprite = skillImage.sprite;
+        // 현재 스킬의 정보 담기 
+        dragImage.GetComponent<DragSlot>().setDragSlotSkillData(_data);
+    }
+
+    public void OnDrag(BaseEventData data)
+    {
+        if (dragImage == null)
+            return;
+
+        PointerEventData pointerData = (PointerEventData)data;
+        dragImage.transform.position = pointerData.position;
+    }
+
+    public void OnDragEnd(BaseEventData data)
+    {
+        if (dragImage == null)
+            return;
+
+        dragImage.gameObject.SetActive(false);
     }
 }
