@@ -20,11 +20,12 @@ public class PopupManager : Singleton<PopupManager>
             return;
 
         isPopupActive = true;
+        PlayerManager.Instance.isUIOpen = true;
         
         if(popupList.ContainsKey(popupName))
         {
             popupList[popupName].SetActive(true);
-            popupList[popupName].GetComponent<BasePopup>().init();
+            popupList[popupName].GetComponent<BasePopup>().show();
         }
         else
         {
@@ -35,7 +36,7 @@ public class PopupManager : Singleton<PopupManager>
             obj.SetActive(true);
             popupList[popupName] = obj;
             
-            obj.GetComponent<BasePopup>().show();
+            obj.GetComponent<BasePopup>().init();
         }
     }
 
@@ -44,5 +45,6 @@ public class PopupManager : Singleton<PopupManager>
         Debug.Log("PopupManager close");
         isPopupActive = false;
         popupList[popupName].SetActive(false);
+        PlayerManager.Instance.isUIOpen = false;
     }
 }

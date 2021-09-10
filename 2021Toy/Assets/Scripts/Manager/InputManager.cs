@@ -19,7 +19,8 @@ public class InputManager : Singleton<InputManager>
             { KeyCode.A, KeyDown_A },
             { KeyCode.S, KeyDown_S },
             { KeyCode.D, KeyDown_D },
-            { KeyCode.F, KeyDown_F }
+            { KeyCode.F, KeyDown_F },
+            { KeyCode.K, KeyDonw_K }
         };
     }
 
@@ -74,5 +75,11 @@ public class InputManager : Singleton<InputManager>
     private void KeyDown_F()
     {
         Debug.Log("F is BackStep");
+    }
+
+    private void KeyDonw_K()
+    {
+        Debug.Log("K is Skill Popup");
+        PopupManager.Instance.show("PopupSkill");
     }
 }

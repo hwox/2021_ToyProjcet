@@ -45,7 +45,6 @@ public class PlayerObject : MoveObject
         if (isMove)
         {
             move();
-            Debug.Log("keep going");
         }
     }
 

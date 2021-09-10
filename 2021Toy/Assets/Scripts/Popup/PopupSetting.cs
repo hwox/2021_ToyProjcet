@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PopupSetting : BasePopup
 {
-    public Button btnClose; 
+    public Button btnClose;
 
     void Start()
     {
@@ -16,7 +16,6 @@ public class PopupSetting : BasePopup
     {
         base.show();
     }
-
 
     public override void init()
     {

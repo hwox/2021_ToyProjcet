@@ -6,13 +6,15 @@ public class PlayerManager : Singleton<PlayerManager>
 {
     int state;
 
-    int type; // 
+    int type;
 
     Camera MainCamera;
 
     [SerializeField]
     GameObject player;
     PlayerObject playerObj;
+
+    public bool isUIOpen { get; set; }
 
     public void init()
     {
@@ -36,6 +38,14 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public void playerMoveInput(Vector3 transPos)
     {
+        if (isUIOpen)
+            return;
+
         playerObj.playerMove(transPos);
+    }
+
+    public int getPlayerNowType()
+    {
+        return type;
     }
 }

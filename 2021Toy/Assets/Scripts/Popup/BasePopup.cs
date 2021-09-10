@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BasePopup : MonoBehaviour
-{
-    Button btnClose;
-    Image Dimmed;
+{ 
+    protected Image Dimmed;
 
     void Start()
     {
-        btnClose = this.transform.Find("btnClose").GetComponent<Button>();
         Dimmed = this.transform.Find("Dimmed").GetComponent<Image>();
 
-        btnClose.onClick.AddListener(close);
-        Dimmed.raycastTarget = true; // 뒤에 클릭 안되게 
+        // Dimmed 같은 경우에 사용하지 않는 경우가 있음 skill popup 같은 경우
+        if (Dimmed != null)
+            Dimmed.raycastTarget = true; // 뒤에 클릭 안되게 
+
     }
 
     public virtual void init()
@@ -43,11 +43,5 @@ public class BasePopup : MonoBehaviour
     protected void closeTween()
     {
         iTween.ScaleTo(gameObject, iTween.Hash("from", 1, "to", 0, "time", 0.5f, "easeType", "easeInOutback"));
-    }
-
-    // 팝업을 아예 삭제할 때
-    protected void delete()
-    {
-        btnClose.onClick.RemoveListener(close);
     }
 }

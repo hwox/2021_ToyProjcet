@@ -17,30 +17,19 @@ public class DataManager : Singleton<DataManager>
         last
     }
 
-    List<Dictionary<string, object>> skillData;
+    public List<Dictionary<string, object>> skillData;
     List<Dictionary<string, object>> scriptData;
     List<Dictionary<string, object>> enemyData;
     List<Dictionary<string, object>> itemData;
 
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    List<SkillData> skills = new List<SkillData>();
 
     public void init()
     {
-        // dataRead(path);
         dataRead((int)DataType.skill);
-        for(int i=0;i<skillData.Count; ++i)
-        {
-            Debug.Log(skillData[i]["desc"].ToString());
-        }
+
+       
     }
 
     // excel 파일을 읽어오려 했으나 자꾸 Microsoft office관련 참조가 풀리면서 에러 발생
@@ -66,4 +55,20 @@ public class DataManager : Singleton<DataManager>
         }
     }
 
+    public List<SkillData> getSkillData()
+    {
+        List<SkillData> lists = new List<SkillData>();
+        for (int i = 0; i < skillData.Count; ++i)
+        {
+            SkillData temp = new SkillData();
+            temp.id = System.Convert.ToInt32(skillData[i]["id"]);
+            temp.name = skillData[i]["name"].ToString();
+            temp.type = System.Convert.ToInt32(skillData[i]["type"]);
+            temp.desc = skillData[i]["desc"].ToString();
+            temp.time = System.Convert.ToInt32(skillData[i]["time"]);
+            temp.cooltime = System.Convert.ToInt32(skillData[i]["cooltime"]);
+            lists.Add(temp);
+        }
+        return lists;
+    }
 }
