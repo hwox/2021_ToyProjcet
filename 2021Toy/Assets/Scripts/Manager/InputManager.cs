@@ -18,7 +18,8 @@ public class InputManager : Singleton<InputManager>
         {
             { KeyCode.A, KeyDown_A },
             { KeyCode.S, KeyDown_S },
-            { KeyCode.D, KeyDown_D }
+            { KeyCode.D, KeyDown_D },
+            { KeyCode.F, KeyDown_F }
         };
     }
 
@@ -69,5 +70,9 @@ public class InputManager : Singleton<InputManager>
     private void KeyDown_D()
     {
         Debug.Log("D");
+    }
+    private void KeyDown_F()
+    {
+        Debug.Log("F is BackStep");
     }
 }
