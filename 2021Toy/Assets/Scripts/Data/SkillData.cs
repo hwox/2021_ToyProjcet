@@ -4,5 +4,18 @@ using UnityEngine;
 
 public class SkillData : ScriptableObject
 {
-    public List<SkillEntity> skills;
+    public int id;
+    public string name;
+    public int type;
+    public int needMp;
+    public string desc;
+    public int time;
+    public int cooltime;
+
+    public enum skillType
+    {
+        red,
+        yellow,
+        blue
+    }
 }
