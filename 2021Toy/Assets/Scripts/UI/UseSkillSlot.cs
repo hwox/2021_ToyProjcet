@@ -8,6 +8,7 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
 {
     bool isSkillSetEnable;
 
+    public Sprite standImage;
     public Image cantUseSkill;
     public Image skillImage;
     public Text coolTime;
@@ -25,18 +26,15 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("아뭔데");
         if (!isSkillSetEnable)
             return;
 
         isSkillSetEnable = false;
         data = collision.gameObject.GetComponent<DragSlot>().getSkillData();
 
-        Debug.Log(data);
-
         string imagePath = "Images/" + data.id;
         skillImage.sprite = Resources.Load<Sprite>(imagePath);
-
+        isUseSkillCheck();
 
         Invoke("skillSetEnable", 1.0f);
     }
@@ -70,6 +68,16 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
             return;
 
         dragImage.gameObject.SetActive(false);
+        data = null;
+        skillImage.sprite = standImage;
+    }
+
+    void isUseSkillCheck()
+    {
+        if (data.type == PlayerManager.Instance.getPlayerNowType())
+            cantUseSkill.gameObject.SetActive(false);
+        else
+            cantUseSkill.gameObject.SetActive(true);
     }
 
     public void receiveCall(string key, Hashtable param)
@@ -80,10 +88,7 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
             if (data == null)
                 return;
 
-            if(data.type == PlayerManager.Instance.getPlayerNowType())
-                cantUseSkill.gameObject.SetActive(false);
-            else
-                cantUseSkill.gameObject.SetActive(true);
+            isUseSkillCheck();
         }
     }
 }
