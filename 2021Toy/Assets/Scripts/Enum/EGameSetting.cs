@@ -16,4 +16,9 @@ public class EGameSetting : MonoBehaviour
     // 플레이 로봇 타입 
     static public int ROBOT_RED     = 0;
     static public int ROBOT_YELLOW  = 1;
+
+
+    // 이벤트 관련 키
+    static public string HP_MINUS   = "hpMinus";
+    static public string HP_PLUS    = "hpPlus";
 }

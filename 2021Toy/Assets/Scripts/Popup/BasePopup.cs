@@ -50,6 +50,4 @@ public class BasePopup : MonoBehaviour
     {
         btnClose.onClick.RemoveListener(close);
     }
-
-
 }
