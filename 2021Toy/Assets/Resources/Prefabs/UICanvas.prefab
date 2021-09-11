@@ -167,6 +167,7 @@ MonoBehaviour:
   cantUseSkill: {fileID: 5867022089104762306}
   skillImage: {fileID: 0}
   coolTime: {fileID: 0}
+  thisKey: A
 --- !u!65 &4840403117472984250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -285,6 +286,7 @@ MonoBehaviour:
   cantUseSkill: {fileID: 8887411528982604536}
   skillImage: {fileID: 0}
   coolTime: {fileID: 0}
+  thisKey: S
 --- !u!1 &916776931449071844
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +800,7 @@ MonoBehaviour:
   cantUseSkill: {fileID: 3636791490966626590}
   skillImage: {fileID: 0}
   coolTime: {fileID: 0}
+  thisKey: D
 --- !u!65 &4410849807167370239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -903,6 +906,7 @@ MonoBehaviour:
   cantUseSkill: {fileID: 7196461723983639424}
   skillImage: {fileID: 0}
   coolTime: {fileID: 0}
+  thisKey: F
 --- !u!65 &6963505689815236097
 BoxCollider:
   m_ObjectHideFlags: 0

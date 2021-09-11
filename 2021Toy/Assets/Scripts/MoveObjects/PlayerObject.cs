@@ -116,6 +116,7 @@ public class PlayerObject : MoveObject, IHashRecv
         {
             Debug.Log("SkillEnd call");
             isNowUseSkill = false;
+            isMove = false;
         }
     }
 }

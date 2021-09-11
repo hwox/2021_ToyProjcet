@@ -64,6 +64,7 @@ public class DataManager : Singleton<DataManager>
             temp.id = System.Convert.ToInt32(skillData[i]["id"]);
             temp.name = skillData[i]["name"].ToString();
             temp.type = System.Convert.ToInt32(skillData[i]["type"]);
+            temp.typeId = System.Convert.ToInt32(skillData[i]["typeId"]);
             temp.desc = skillData[i]["desc"].ToString();
             temp.time = System.Convert.ToInt32(skillData[i]["time"]);
             temp.cooltime = System.Convert.ToInt32(skillData[i]["cooltime"]);

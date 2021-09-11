@@ -13,6 +13,7 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
     public Image skillImage;
     public Text coolTime;
 
+    public string thisKey;
 
     SkillData data;
     Image dragImage;
@@ -23,10 +24,27 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
         skillImage = GetComponent<Image>();
         dragImage = this.transform.root.Find("DragSlot").GetComponent<Image>();
         ObserverManager.Instance.registerEvent(EGameSetting.PLAYER_TYPE_CHANGE, this);
-        ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_A, this);
-        ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_S, this);
-        ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_D, this);
-        ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_F, this);
+        thisKeyEventSetting();
+    }
+
+    void thisKeyEventSetting()
+    {
+        switch (thisKey)
+        {
+            case "A":
+                ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_A, this);
+                break;
+            case "S":
+                ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_S, this);
+                break;
+            case "D":
+                ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_D, this);
+                break;
+            case "F":
+                ObserverManager.Instance.registerEvent(EGameSetting.INPUT_KEY_F, this);
+                break;
+        }
+
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -101,6 +119,7 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
         {
             if (data == null)
                 return;
+
             if (data.type != PlayerManager.Instance.getPlayerNowType())
                 return;
 
