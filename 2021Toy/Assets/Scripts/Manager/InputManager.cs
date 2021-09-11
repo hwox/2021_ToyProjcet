@@ -12,6 +12,8 @@ public class InputManager : Singleton<InputManager>
 
     Camera mainCam;
 
+    bool keyCoolTime;
+
     void Start()
     {
         keyDic = new Dictionary<KeyCode, Action>
@@ -20,7 +22,8 @@ public class InputManager : Singleton<InputManager>
             { KeyCode.S, KeyDown_S },
             { KeyCode.D, KeyDown_D },
             { KeyCode.F, KeyDown_F },
-            { KeyCode.K, KeyDonw_K }
+            { KeyCode.K, KeyDonw_K },
+            { KeyCode.T, KeyDown_T } 
         };
     }
 
@@ -81,5 +84,22 @@ public class InputManager : Singleton<InputManager>
     {
         Debug.Log("K is Skill Popup");
         PopupManager.Instance.show("PopupSkill");
+    }
+
+    private void KeyDown_T()
+    {
+        // 플레이어 타입 전환
+        if (keyCoolTime)
+            return;
+
+        keyCoolTime = true;
+        PlayerManager.Instance.playerTypeChange();
+
+        Invoke("keyCoolTimeCheck", 1.0f);
+    }
+
+    private void keyCoolTimeCheck()
+    {
+        keyCoolTime = false;
     }
 }

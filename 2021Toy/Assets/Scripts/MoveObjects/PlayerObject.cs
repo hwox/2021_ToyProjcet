@@ -6,7 +6,6 @@ using UnityEngine.AI;
 
 public class PlayerObject : MoveObject
 {
-    int nowType; // yellow & red 
     Transform trans;
 
     Vector3 transPos, transRot;

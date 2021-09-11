@@ -36,7 +36,6 @@ public class BasePopup : MonoBehaviour
 
     protected void showTween()
     {
-        Debug.Log(this + " : showTween");
         iTween.ScaleTo(gameObject, iTween.Hash("time", 0.5f, "easeType", "easeInOutback"));
     }
 

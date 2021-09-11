@@ -22,6 +22,7 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
         isSkillSetEnable = true;
         skillImage = GetComponent<Image>();
         dragImage = this.transform.root.Find("DragSlot").GetComponent<Image>();
+        ObserverManager.Instance.registerEvent(EGameSetting.PLAYER_TYPE_CHANGE, this);
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -83,11 +84,12 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
     public void receiveCall(string key, Hashtable param)
     {
         // 만약에 타입이 바뀌면 타입별로 사용할 수 있는 스킬인지 체크하기 
-        if(key == "PlayerTypeChange")
+        if(key == EGameSetting.PLAYER_TYPE_CHANGE)
         {
             if (data == null)
                 return;
 
+            Debug.Log("receive");
             isUseSkillCheck();
         }
     }

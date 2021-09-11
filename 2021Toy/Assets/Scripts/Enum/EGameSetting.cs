@@ -19,6 +19,7 @@ public class EGameSetting : MonoBehaviour
 
 
     // 이벤트 관련 키
-    static public string HP_MINUS   = "hpMinus";
-    static public string HP_PLUS    = "hpPlus";
+    static public string HP_MINUS           = "hpMinus";
+    static public string HP_PLUS            = "hpPlus";
+    static public string PLAYER_TYPE_CHANGE = "PlayerTypeChange";
 }

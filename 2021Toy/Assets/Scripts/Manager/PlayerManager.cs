@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum playerType
+{
+    red,
+    yellow,
+    blue,
+    last
+}
+
 public class PlayerManager : Singleton<PlayerManager>
 {
     int state;
-
     int type;
 
     Camera MainCamera;
@@ -47,5 +54,18 @@ public class PlayerManager : Singleton<PlayerManager>
     public int getPlayerNowType()
     {
         return type;
+    }
+
+    public void playerTypeChange()
+    {
+        type += 1;
+
+        if(type >= (int)playerType.last)
+        {
+            type = 0;
+        }
+
+        playerObj.playRobotTypeChange(type);
+        ObserverManager.Instance.dispatch(EGameSetting.PLAYER_TYPE_CHANGE);
     }
 }

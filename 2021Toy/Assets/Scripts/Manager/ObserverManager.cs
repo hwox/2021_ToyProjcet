@@ -45,7 +45,7 @@ public class ObserverManager : Singleton<ObserverManager>
 
   
     // 입력된 key값의 이벤트를 호출
-    public void dispatch(string key, Hashtable param)
+    public void dispatch(string key, Hashtable param = null)
     {
         if (!eventHashDic.ContainsKey(key)) return;
 
