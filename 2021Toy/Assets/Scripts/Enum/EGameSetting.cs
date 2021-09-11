@@ -22,4 +22,8 @@ public class EGameSetting : MonoBehaviour
     static public string HP_MINUS           = "hpMinus";
     static public string HP_PLUS            = "hpPlus";
     static public string PLAYER_TYPE_CHANGE = "PlayerTypeChange";
+    static public string INPUT_KEY_A        = "InputKeyA";
+    static public string INPUT_KEY_S        = "InputKeyS";
+    static public string INPUT_KEY_D        = "InputKeyD";
+    static public string INPUT_KEY_F        = "InputKeyF";
 }

@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class PlayerObject : MoveObject
+public class PlayerObject : MoveObject, IHashRecv
 {
     Transform trans;
-
     Vector3 transPos, transRot;
     
     [SerializeField]
@@ -29,27 +28,19 @@ public class PlayerObject : MoveObject
         playType = 0;
 
         isNowUseSkill = false;
-
+        isMove = false;
         nowPlayRobot = robots[playType];
+
+        ObserverManager.Instance.registerEvent("SkillEnd", this);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void LateUpdate()
-    {
-        if (isMove)
+       if (isMove)
         {
             move();
         }
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 
     public void useSkill(SkillData skill)
@@ -69,15 +60,18 @@ public class PlayerObject : MoveObject
         {
             nav.SetDestination(pos);
             transPos = pos;
+            nowPlayRobot.GetComponent<RobotControl>().animMove(true);
             isMove = true;
         }
     }
 
     private void move()
     {
-        if (nav.velocity.magnitude == 0.1f || !isMoveEnable)
+        if ((nav.velocity.magnitude >= 0.1f && nav.remainingDistance <= 0.2f)
+            || !isMoveEnable)
         {
             isMove = false;
+            nowPlayRobot.GetComponent<RobotControl>().animMove(false);
             return;
         }
     }
@@ -108,5 +102,20 @@ public class PlayerObject : MoveObject
         Hashtable hash = new Hashtable();
         hash.Add("damage", 5);
         ObserverManager.Instance.dispatch(EGameSetting.HP_MINUS, hash);
+    }
+
+    public void playerSkillUse(SkillData data)
+    {
+        isNowUseSkill = true;
+        nowPlayRobot.GetComponent<RobotControl>().skill(data);
+    }
+
+    public void receiveCall(string key, Hashtable param)
+    {
+        if(key == "SkillEnd")
+        {
+            Debug.Log("SkillEnd call");
+            isNowUseSkill = false;
+        }
     }
 }

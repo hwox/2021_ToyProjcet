@@ -68,4 +68,9 @@ public class PlayerManager : Singleton<PlayerManager>
         playerObj.playRobotTypeChange(type);
         ObserverManager.Instance.dispatch(EGameSetting.PLAYER_TYPE_CHANGE);
     }
+    
+    public void playerSkillUse(SkillData data)
+    {
+        playerObj.playerSkillUse(data);
+    }
 }

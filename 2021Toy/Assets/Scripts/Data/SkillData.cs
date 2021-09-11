@@ -11,11 +11,4 @@ public class SkillData : ScriptableObject
     public string desc;
     public int time;
     public int cooltime;
-
-    public enum skillType
-    {
-        red,
-        yellow,
-        blue
-    }
 }

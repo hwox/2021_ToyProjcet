@@ -65,19 +65,19 @@ public class InputManager : Singleton<InputManager>
 
     private void KeyDown_A()
     {
-        Debug.Log("A");
+        ObserverManager.Instance.dispatch(EGameSetting.INPUT_KEY_A);
     }
     private void KeyDown_S()
     {
-        Debug.Log("S");
+        ObserverManager.Instance.dispatch(EGameSetting.INPUT_KEY_S);
     }
     private void KeyDown_D()
     {
-        Debug.Log("D");
+        ObserverManager.Instance.dispatch(EGameSetting.INPUT_KEY_D);
     }
     private void KeyDown_F()
     {
-        Debug.Log("F is BackStep");
+        ObserverManager.Instance.dispatch(EGameSetting.INPUT_KEY_F);
     }
 
     private void KeyDonw_K()
