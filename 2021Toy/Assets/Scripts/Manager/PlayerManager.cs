@@ -15,11 +15,9 @@ public class PlayerManager : Singleton<PlayerManager>
     int state;
     int type;
 
-    Camera MainCamera;
-
-    [SerializeField]
-    GameObject player;
+    public GameObject player;
     PlayerObject playerObj;
+    Camera MainCamera;
 
     public bool isUIOpen { get; set; }
 
