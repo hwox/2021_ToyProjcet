@@ -22,14 +22,8 @@ public class RobotControl : MonoBehaviour
     {
         if (isNowUseSkill)
         {
-            // 애니메이션 state 체크용 디버깅 로그 
-            AnimatorClipInfo[] m_CurrentClipInfo;
-            m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-            Debug.Log(m_CurrentClipInfo[0].clip.name);
-
-            Debug.Log("Now Skill Use ing");
-
             if (!anim.GetCurrentAnimatorStateInfo(0).IsName("WalkF") &&
+                !anim.GetCurrentAnimatorStateInfo(0).IsName("WalkB") &&
                 anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f)
             {
                 if (useSkill == null)

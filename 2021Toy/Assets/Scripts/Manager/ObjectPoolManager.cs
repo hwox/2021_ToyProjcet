@@ -78,4 +78,22 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
             }
         }
     }
+
+    public GameObject pop(poolType type)
+    {
+        for(int i=0;i<POOL_OBJ_CNT;++i)
+        {
+            if(poolObject[i+(POOL_OBJ_CNT)*((int)type-1)].active == true)
+            {
+                continue;
+            }
+            else
+            {
+                Debug.Log(i + (POOL_OBJ_CNT) * ((int)type - 1) + "번 return");
+                return poolObject[i + (POOL_OBJ_CNT) * ((int)type - 1)];
+            }
+        }
+
+        return null;
+    }
 }
