@@ -47,4 +47,12 @@ public class AlatorControl : RobotControl
             isFireBullet = false;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Hashtable hash = new Hashtable();
+        hash.Add("damage", 5);
+        Debug.Log(collision.collider.name);
+        ObserverManager.Instance.dispatch(EGameSetting.HP_MINUS, hash);
+    }
 }

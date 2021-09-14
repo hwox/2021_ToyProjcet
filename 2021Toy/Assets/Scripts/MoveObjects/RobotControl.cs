@@ -43,4 +43,17 @@ public class RobotControl : MonoBehaviour
         anim.SetInteger("skilltype", useSkill.typeId);
         Debug.Log(useSkill.typeId);
     }
+
+    protected void die()
+    {
+        // anim.SetBool("Die", true);
+        Invoke("ActiveEnd()", 3.0f);
+    }
+
+    void activeEnd()
+    {
+        // 사라지는거 쉐이더로 구현해보기
+        this.gameObject.SetActive(true);
+    }
+
 }

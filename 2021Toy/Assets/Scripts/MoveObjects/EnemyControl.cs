@@ -40,4 +40,14 @@ public class EnemyControl : RobotControl
     {
         nav.speed = speed;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Attack")
+            || collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        {
+            Debug.Log("attack");
+            die();
+        }
+    }
 }

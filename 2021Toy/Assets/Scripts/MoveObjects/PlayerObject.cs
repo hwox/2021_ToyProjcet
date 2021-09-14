@@ -97,12 +97,6 @@ public class PlayerObject : MoveObject, IHashRecv
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        Hashtable hash = new Hashtable();
-        hash.Add("damage", 5);
-        ObserverManager.Instance.dispatch(EGameSetting.HP_MINUS, hash);
-    }
 
     public void playerSkillUse(SkillData data)
     {
