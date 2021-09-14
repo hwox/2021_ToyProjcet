@@ -20,14 +20,22 @@ public class AlatorControl : RobotControl
                 return;
 
             isFireBullet = true;
-            Invoke("coolTime", 3.0f); // temp
+            Invoke("coolTime", 1.5f); // temp
 
-            for (int i=0;i<4;++i)
+            for (int i=0;i<2;++i)
             {
                 GameObject obj = ObjectPoolManager.Instance.pop(ObjectPoolManager.poolType.bullet);
-                obj.SetActive(true);
-                obj.transform.position = this.transform.position - Vector3.left * (0.3f * i) + Vector3.forward + Vector3.up * 1.7f; ;
-                obj.GetComponent<Bullet>().init();
+
+                if (i % 2 == 0)
+                {
+                    obj.transform.position = this.transform.position - Vector3.left * 0.4f + Vector3.up * 1.2f; ;
+                }
+                else
+                {
+                    obj.transform.position = this.transform.position + Vector3.left * 0.4f + Vector3.up * 1.2f; ;
+                }
+
+                obj.GetComponent<Bullet>().init(this.transform.parent.rotation);
             }
         }
     }

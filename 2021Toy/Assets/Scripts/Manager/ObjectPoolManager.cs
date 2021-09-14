@@ -89,7 +89,6 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
             }
             else
             {
-                Debug.Log(i + (POOL_OBJ_CNT) * ((int)type - 1) + "번 return");
                 return poolObject[i + (POOL_OBJ_CNT) * ((int)type - 1)];
             }
         }
