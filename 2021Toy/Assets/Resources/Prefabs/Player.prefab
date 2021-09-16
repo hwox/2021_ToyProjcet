@@ -273,6 +273,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1620334346074504796}
     m_Modifications:
+    - target: {fileID: 1288304530631066, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236880825233138, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207452755216722, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670519300766976, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495845597990494, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456522807035798, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1089612578073814, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
       propertyPath: m_Name
       value: Alator Type 3
@@ -338,35 +362,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1670519300766976, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1495845597990494, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288304530631066, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1236880825233138, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 1669180111364172, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1498696057390278, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1207452755216722, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456522807035798, guid: 37c701931bbc76545a461349beb5dc88, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -499,14 +499,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1620334346074504796}
     m_Modifications:
-    - target: {fileID: 1176364968224638, guid: cdb4a594969d26c458fd59ab999d8010, type: 3}
-      propertyPath: m_Name
-      value: Saw Type 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176364968224638, guid: cdb4a594969d26c458fd59ab999d8010, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4093773118213470, guid: cdb4a594969d26c458fd59ab999d8010, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -549,6 +541,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4093773118213470, guid: cdb4a594969d26c458fd59ab999d8010, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176364968224638, guid: cdb4a594969d26c458fd59ab999d8010, type: 3}
+      propertyPath: m_Name
+      value: Saw Type 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176364968224638, guid: cdb4a594969d26c458fd59ab999d8010, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 95908289860174646, guid: cdb4a594969d26c458fd59ab999d8010,
