@@ -2,8 +2,9 @@
 {
 	Properties
 	{
+		_MainTex("Main Texture", 2D) = "white" {}
 		_OutlineColor("Outline color", Color) = (0,0,0,1)
-		_OutlineWidth("Outline width", Range(0.1, 1.0)) = 0.1 // outline 사이즈
+		_OutlineWidth("Outline width", Range(0.01, 1.0)) = 0.1 // outline 사이즈
 	}
 
 		CGINCLUDE
@@ -54,11 +55,41 @@
 			ENDCG
 			}
 
-			//cull back
-			Pass{
-				//CGPROGRAM
+			cull back
+			// surface 
+			CGPROGRAM
+			#pragma surface surf _lightFunc  
 
-				//ENDCG
+			struct Input
+			{
+				float2 uv_MainTex;
+			};
+
+			sampler2D _MainTex;
+
+
+			void surf(Input IN, inout SurfaceOutput o)
+			{
+				float4 fMainTex = tex2D(_MainTex, IN.uv_MainTex);
+				o.Albedo = fMainTex.rgb;
+				o.Alpha = 1.0f;
 			}
+
+			// 라이트 함수
+			float4 Lighting_lightFunc(SurfaceOutput s, float3 lightDir, float3 viewDir, float atten)
+			{
+				float3 bandedDiffuse;
+				float nDotLight = dot(s.Normal, lightDir) * 0.5f + 0.5f;
+
+				float bandNum = 3.0f;
+				bandedDiffuse = ceil(nDotLight * bandNum) / bandNum;
+
+				float4 outColor;
+				outColor.rgb = (s.Albedo) * bandedDiffuse * _LightColor0.rgb * atten;
+				outColor.a = s.Alpha;
+
+				return outColor;
+			}
+			ENDCG
 		}
 }
