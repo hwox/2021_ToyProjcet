@@ -65,6 +65,12 @@ public class CameraManager : Singleton<CameraManager>
             mainCamTrans.position = Vector3.Lerp(mainCamTrans.position, targetPos, Time.fixedDeltaTime * posSmooth);
             mainCamTrans.LookAt(playerTransform.position + attOffset * playerTransform.transform.forward);
         }
+        else if (mainCamOffsetType == EGameSetting.BACK_VIEW)
+        {
+            targetPos = playerTransform.transform.TransformPoint(cam3Offset);
+            mainCamTrans.position = Vector3.Lerp(mainCamTrans.position, targetPos, Time.fixedDeltaTime * posSmooth);
+            mainCamTrans.LookAt(playerTransform.position + attOffset * playerTransform.transform.forward);
+        }
     }
 
 
