@@ -58,7 +58,7 @@
 			cull back
 			// surface 
 			CGPROGRAM
-			#pragma surface surf _lightFunc  
+			#pragma surface surf _lightFunc noambient
 
 			struct Input
 			{
@@ -76,7 +76,7 @@
 			}
 
 			// 라이트 함수
-			float4 Lighting_lightFunc(SurfaceOutput s, float3 lightDir, float3 viewDir, float atten)
+			float4 Lighting_lightFunc(SurfaceOutput s, float3 lightDir, float atten)
 			{
 				float3 bandedDiffuse;
 				float nDotLight = dot(s.Normal, lightDir) * 0.5f + 0.5f;
