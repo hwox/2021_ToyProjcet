@@ -5,9 +5,7 @@ using UnityEngine;
 public class MapClickEffect : MonoBehaviour
 {
     public Material clickPosMaterial;
-    public Vector3 mousePos;
-
-    float radius;
+    float cut;
     bool draw { get; set; }
 
     void Start()
@@ -19,25 +17,24 @@ public class MapClickEffect : MonoBehaviour
     {
         if(draw)
         {
-            radius += Time.deltaTime;
-
-            if(EGameSetting.MAX_RADIUS < radius)
+            cut += Time.deltaTime * 0.5f;
+            clickPosMaterial.SetFloat("_Cut", cut);
+            if(cut >= 1)
             {
-                draw = false;
                 this.gameObject.SetActive(false);
+                draw = false;
             }
-
-            clickPosMaterial.SetVector("Center", new Vector4(mousePos.x, mousePos.y, mousePos.z, 0));
-            clickPosMaterial.SetFloat("Radius", radius);
         }
     }
     
     public void getMousePos(Vector3 pos)
     {
-        this.transform.position = pos;
-        this.gameObject.SetActive(true);
-        mousePos = pos;
+        cut = 0.1f;
         draw = true;
-        radius = 0;
+
+        pos.y = 0.1f;
+        this.transform.position = pos;
+
+        this.gameObject.SetActive(true);
     }
 }

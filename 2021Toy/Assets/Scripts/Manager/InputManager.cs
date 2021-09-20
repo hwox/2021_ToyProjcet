@@ -12,6 +12,7 @@ public class InputManager : Singleton<InputManager>
     Dictionary<KeyCode, Action> keyDic;
     Vector3 rotPos;
 
+    RaycastHit hit;
     Camera mainCam;
 
     bool keyCoolTime;
@@ -45,15 +46,19 @@ public class InputManager : Singleton<InputManager>
     // 플레이어 이동은 마우스로
     void Update()
     {
-        int layerMask = 1 << 10;
-
+        int layerMask = 1 << 9;
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layerMask))
             {
-                clickEffect.GetComponent<MapClickEffect>().getMousePos(hit.point);
                 PlayerManager.Instance.playerMoveInput(hit.point);
+            }
+        }
+        else if(Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            if (Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layerMask))
+            {
+                clickEffect.GetComponent<MapClickEffect>().getMousePos(hit.point);
             }
         }
 

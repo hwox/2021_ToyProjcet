@@ -29,5 +29,5 @@ public class EGameSetting : MonoBehaviour
 
 
     // 마우스 클릭 이펙트 반지름 max 값
-    static public float MAX_RADIUS = 10;
+    static public float MAX_RADIUS = 1;
 }

@@ -3,10 +3,8 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-		_Center ("Center", Vector) = (0, 0, 0, 0)
-		_Radius ("Radius", Range(0,100)) = 1
-		_Border ("Border", Range(0,100)) = 10
-		_AreaColor ("Area Color", Color) = (1, 0.2, 1, 1)
+		_NoiseTex("NoiseTex", 2D) = "White" {}
+		_Cut ("Alpha Cut", Range(0,1)) = 0.1
 	}
 
 	SubShader
@@ -19,31 +17,46 @@
 		struct Input
 		{
 			float2 uv_MainTex;
+			float2 uv_NoiseTex;
 			float3 viewDir;
-			float3 worldPos;
 		};
 
 		sampler2D _MainTex;
-		float2 _Center;
-		float _Radius;
-		float _Border;
-		fixed3 _AreaColor;
+		sampler2D _NoiseTex;
+		float _Cut ;
 
 		void surf(Input IN, inout SurfaceOutput o)
 		{
 			float4 mainTex = tex2D(_MainTex, IN.uv_MainTex);
-			float dist = distance(_Center, IN.worldPos);
+			float4 noise = tex2D(_NoiseTex, IN.uv_NoiseTex);
 
-			if (dist > _Radius && dist < _Radius + _Border)
+			o.Albedo = mainTex.rgb;
+			o.Emission = float3(1, 1, 0);
+			float rim = saturate(dot(o.Normal, IN.viewDir));
+			rim = pow(1 - rim, 3);
+
+			float alpha;
+			if (noise.r >= _Cut)
 			{
-				o.Albedo = _AreaColor.rgb;
+				alpha = rim;
 			}
 			else
 			{
-				o.Albedo = mainTex.rgb;
+				alpha = 0;
 			}
 
-			o.Alpha = mainTex.a;
+			float outline;
+			if (noise.r >= _Cut * 1.3)
+			{
+				outline = 0;
+			}
+			else
+			{
+				outline = 1;
+			}
+
+			o.Albedo = outline;
+			o.Alpha = alpha;
 		}
 
 		ENDCG
