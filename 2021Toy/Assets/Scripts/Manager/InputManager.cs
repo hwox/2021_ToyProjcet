@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class InputManager : Singleton<InputManager>
 {
+    public GameObject clickEffect;
+
     Vector3 mousePos, targetPos, transPos;
     Dictionary<KeyCode, Action> keyDic;
     Vector3 rotPos;
@@ -16,6 +18,9 @@ public class InputManager : Singleton<InputManager>
 
     void Start()
     {
+        clickEffect = GameObject.Find("ClickPosEffect"); // 우선 임시. 나중에 manager loading 순서 부분 정리 후에 연결
+        clickEffect.SetActive(false);
+
         keyDic = new Dictionary<KeyCode, Action>
         {
             { KeyCode.A, KeyDown_A },
@@ -47,6 +52,7 @@ public class InputManager : Singleton<InputManager>
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layerMask))
             {
+                clickEffect.GetComponent<MapClickEffect>().getMousePos(hit.point);
                 PlayerManager.Instance.playerMoveInput(hit.point);
             }
         }
