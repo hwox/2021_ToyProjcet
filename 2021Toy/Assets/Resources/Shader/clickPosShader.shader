@@ -12,6 +12,7 @@
 		Tags { "RenderType" = "Transparent" "Queue" = "Transparent" }
 
 		CGPROGRAM
+		#include "UnityCG.cginc"
 		#pragma surface surf Lambert noambient alpha:fade
 
 		struct Input
@@ -31,7 +32,7 @@
 			float4 noise = tex2D(_NoiseTex, IN.uv_NoiseTex);
 
 			o.Albedo = mainTex.rgb;
-			o.Emission = float3(1, 1, 0);
+			
 			float rim = saturate(dot(o.Normal, IN.viewDir));
 			rim = pow(1 - rim, 3);
 
@@ -52,10 +53,11 @@
 			}
 			else
 			{
-				outline = 1;
+				outline = 0.5;
 			}
 
-			o.Albedo = outline;
+			o.Emission = mainTex.rgb;
+			o.Albedo = outline * _LightColor0.rgb;
 			o.Alpha = alpha;
 		}
 
