@@ -26,4 +26,6 @@ public class EGameSetting : MonoBehaviour
     static public string INPUT_KEY_S        = "InputKeyS";
     static public string INPUT_KEY_D        = "InputKeyD";
     static public string INPUT_KEY_F        = "InputKeyF";
+
+    static public string NOTI_MESSAGE       = "NotiMessage";
 }
