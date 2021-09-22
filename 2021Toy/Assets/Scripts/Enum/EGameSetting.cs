@@ -27,7 +27,5 @@ public class EGameSetting : MonoBehaviour
     static public string INPUT_KEY_D        = "InputKeyD";
     static public string INPUT_KEY_F        = "InputKeyF";
 
-
-    // 마우스 클릭 이펙트 반지름 max 값
-    static public float MAX_RADIUS = 1;
+    static public string NOTI_MESSAGE       = "NotiMessage";
 }

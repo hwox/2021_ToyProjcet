@@ -121,7 +121,15 @@ public class UseSkillSlot : MonoBehaviour, IHashRecv
                 return;
 
             if (data.type != PlayerManager.Instance.getPlayerNowType())
+            {
+                Hashtable hash = new Hashtable();
+
+                string msg = "[" + data.name + "]은 현재 타입에서 사용할 수 없는 스킬입니다";
+                hash.Add("message", msg);
+
+                ObserverManager.Instance.dispatch(EGameSetting.NOTI_MESSAGE, hash);
                 return;
+            }
 
             PlayerManager.Instance.playerSkillUse(data);
         }

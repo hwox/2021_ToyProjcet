@@ -52,7 +52,6 @@ public class AlatorControl : RobotControl
     {
         Hashtable hash = new Hashtable();
         hash.Add("damage", 5);
-        Debug.Log(collision.collider.name);
         ObserverManager.Instance.dispatch(EGameSetting.HP_MINUS, hash);
     }
 }
